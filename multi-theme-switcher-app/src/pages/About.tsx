@@ -6,19 +6,22 @@ export default function About() {
 
   return (
     <div
+      className="theme-transition"
       style={{
         background: theme.background,
         color: theme.color,
-        fontFamily: theme.fontFamily,
-        minHeight: "80vh",
-        padding: theme.spacing,
-        borderRadius: theme.borderRadius,
+        fontFamily: theme.fontFamily
       }}
     >
-      <h2>About Page</h2>
-      <p>
-        This is a demo React app showcasing a multi-theme switcher. You can switch between three unique themes using the dropdown in the header. Each theme changes the layout, fonts, colors, and overall structure of the app.
-      </p>
+      <div className="about-content">
+        <h2>About Page</h2>
+        <p>
+          This is a demo React app showcasing a multi-theme switcher. You can
+          switch between three unique themes using the dropdown in the header.
+          Each theme changes the layout, fonts, colors, and overall structure of
+          the app.
+        </p>
+      </div>
     </div>
   );
 }

@@ -6,25 +6,34 @@ interface ProductCardProps {
   price: number;
   image: string;
   description: string;
+  // category: string;
+  // rating: {
+  //   rate: number;
+  //   count: number;
+  // };
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ title, price, image, description }) => {
+const ProductCard: React.FC<ProductCardProps> = ({
+  title,
+  price,
+  image,
+  description,
+  // category,
+  // rating,
+}) => {
   const { theme } = useTheme();
 
   return (
     <div
+      className="product-card"
       style={{
         background: theme.cardBg,
         color: theme.cardColor,
         borderRadius: theme.borderRadius,
-        boxShadow: theme.boxShadow || "0 2px 8px rgba(0,0,0,0.05)",
+        boxShadow: theme.cardShadow || "0 2px 8px rgba(0,0,0,0.05)",
         padding: theme.spacing,
         margin: theme.spacing,
-        maxWidth: 300,
         fontFamily: theme.fontFamily,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
       }}
     >
       <img
@@ -39,20 +48,48 @@ const ProductCard: React.FC<ProductCardProps> = ({ title, price, image, descript
           background: "#fff",
         }}
       />
-      <h3 style={{ margin: "8px 0" }}>{title}</h3>
-      <p style={{ fontWeight: "bold", margin: "4px 0" }}>${price}</p>
-      <p style={{ fontSize: 14, margin: "8px 0" }}>{description.slice(0, 60)}...</p>
+      <h3
+        style={{
+          margin: "8px 0",
+          fontSize: theme.fontSize,
+          textAlign: "center",
+        }}
+      >
+        {title}
+      </h3>
+      {/* <p style={{ margin: "4px 0", fontSize: 14, color: "#888" }}>{category}</p> */}
+      <p
+        style={{
+          fontWeight: "bold",
+          margin: "4px 0",
+          fontSize: 18,
+        }}
+      >
+        ${price}
+      </p>
+      <p
+        style={{
+          fontSize: 14,
+          margin: "8px 0",
+          textAlign: "center",
+        }}
+      >
+        {description.slice(0, 60)}...
+      </p>
+      {/* <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
+        <span style={{ fontSize: 16, marginRight: 4 }}>⭐</span>
+        <span style={{ fontSize: 15 }}>
+          {rating.rate} ({rating.count})
+        </span>
+      </div> */}
       <button
+        className="add-to-cart-button"
+        type="button"
         style={{
           background: theme.buttonBg,
           color: theme.buttonColor,
-          border: "none",
           borderRadius: theme.borderRadius,
-          padding: "8px 16px",
           fontFamily: theme.fontFamily,
-          cursor: "pointer",
-          marginTop: 8,
-          transition: "background 0.3s",
         }}
       >
         Add to Cart

@@ -1,8 +1,10 @@
 const theme3 = {
   background: "#f0f8ff",
   color: "#333",
-  fontFamily: "'Pacifico', cursive",
-  layout: "colorful",
+  fontFamily: "'Pacifico', cursive", // playful Google Font
+  fontSize: "20px", // larger, playful
+  fontWeight: "400",
+  layout: "colorful", // card-based grid layout
   headerBg: "#ffb347",
   headerColor: "#fff",
   buttonBg: "#ff69b4",
@@ -11,7 +13,8 @@ const theme3 = {
   cardColor: "#333",
   borderRadius: "24px",
   spacing: "24px",
-  boxShadow: "0 4px 16px rgba(255, 182, 193, 0.2)",
+  margin: "24px",
+  cardShadow: "0 4px 16px rgba(255, 182, 193, 0.2)",
 };
 
 export default theme3;

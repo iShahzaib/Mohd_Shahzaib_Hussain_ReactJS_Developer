@@ -12,7 +12,7 @@ function App() {
     <ThemeProvider>
       <Router>
         <Header />
-        <div style={{ paddingTop: "6rem" }}>
+        <div style={{ paddingTop: "4rem" }}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
