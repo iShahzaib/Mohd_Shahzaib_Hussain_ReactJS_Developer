@@ -37,15 +37,12 @@ const ProductCard: React.FC<ProductCardProps> = ({
       }}
     >
       <img
+        className="product-image"
         src={image}
         alt={title}
         style={{
-          width: "100%",
-          height: 180,
-          objectFit: "contain",
           borderRadius: theme.borderRadius,
           marginBottom: theme.spacing,
-          background: "#fff",
         }}
       />
       <h3
@@ -58,30 +55,20 @@ const ProductCard: React.FC<ProductCardProps> = ({
         {title}
       </h3>
       {/* <p style={{ margin: "4px 0", fontSize: 14, color: "#888" }}>{category}</p> */}
-      <p
-        style={{
-          fontWeight: "bold",
-          margin: "4px 0",
-          fontSize: 18,
-        }}
-      >
-        ${price}
-      </p>
-      <p
-        style={{
-          fontSize: 14,
-          margin: "8px 0",
-          textAlign: "center",
-        }}
-      >
+
+      <p className="product-price">${price}</p>
+
+      <p title={description} className="product-description">
         {description.slice(0, 60)}...
       </p>
+
       {/* <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>
         <span style={{ fontSize: 16, marginRight: 4 }}>⭐</span>
         <span style={{ fontSize: 15 }}>
           {rating.rate} ({rating.count})
         </span>
       </div> */}
+
       <button
         className="add-to-cart-button"
         type="button"

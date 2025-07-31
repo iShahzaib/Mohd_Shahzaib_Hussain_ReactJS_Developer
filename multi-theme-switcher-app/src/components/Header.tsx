@@ -16,22 +16,10 @@ export default function Header() {
       }}
     >
       <div style={{ display: "flex", alignItems: "center" }}>
-        <span
-          style={{
-            fontWeight: "bold",
-            fontSize: 24,
-            marginRight: 16,
-            letterSpacing: 1,
-          }}
-        >
+        <span className="header-icon" role="img" aria-label="Theme Icon">
           🌓
         </span>
-        <span
-          className="header-title"
-          style={{ fontWeight: "bold", fontSize: 20 }}
-        >
-          Multi-Theme Switcher App
-        </span>
+        <span className="header-title">Multi-Theme Switcher App</span>
       </div>
 
       <select

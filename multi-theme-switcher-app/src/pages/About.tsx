@@ -10,7 +10,7 @@ export default function About() {
       style={{
         background: theme.background,
         color: theme.color,
-        fontFamily: theme.fontFamily
+        fontFamily: theme.fontFamily,
       }}
     >
       <div className="about-content">
