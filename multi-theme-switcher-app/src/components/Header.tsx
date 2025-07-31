@@ -35,8 +35,8 @@ export default function Header() {
         aria-label="Switch Theme"
       >
         <option value="theme1">🌞 Minimalist (Theme 1)</option>
-        <option value="theme2">🌚 Dark Sidebar (Theme 2)</option>
-        <option value="theme3">🌈 Colorful Cards (Theme 3)</option>
+        <option value="theme2">🌚 Dark Mode (Theme 2)</option>
+        <option value="theme3">🌈 Colorful (Theme 3)</option>
       </select>
     </header>
   );

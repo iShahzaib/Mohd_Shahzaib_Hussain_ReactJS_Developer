@@ -59,7 +59,9 @@ const ProductCard: React.FC<ProductCardProps> = ({
       <p className="product-price">${price}</p>
 
       <p title={description} className="product-description">
-        {description.slice(0, 60)}...
+        {description.length > 60
+          ? `${description.substring(0, 60)}...`
+          : description}
       </p>
 
       {/* <div style={{ display: "flex", alignItems: "center", marginBottom: 8 }}>

@@ -137,7 +137,7 @@
   border: none;
   padding: 8px 16px;
   cursor: pointer;
-  margin-top: 8px;
+  margin-top: auto;
   transition: background 0.3s;
   font-size: 16px;
 }
