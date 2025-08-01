@@ -45,7 +45,7 @@ npm run dev
 
 ## 🌐 Live Demo
 
-🔗 [Deployed on Render](https://your-deployment-url.vercel.app) *(Replace with your actual link)*
+🔗 [Deployed on Render](https://mohd-shahzaib-hussain-reactjs-developer.onrender.com)
 
 ## 🧑‍💻 Developer
 
