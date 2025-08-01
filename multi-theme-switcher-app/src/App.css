@@ -1,18 +1,22 @@
+/* Core app layout */
 .App {
   text-align: center;
 }
 
+/* Logo (from default CRA setup) */
 .App-logo {
   height: 40vmin;
   pointer-events: none;
 }
 
+/* Optional animation for logo if motion is allowed */
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
 
+/* Optional default header styling (can be overridden or removed) */
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -28,6 +32,7 @@
   color: #61dafb;
 }
 
+/* Logo spin animation */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -38,12 +43,14 @@
   }
 }
 
+/* ------------------------------ */
+/* 📱 Responsive layout overrides */
+/* ------------------------------ */
 @media (max-width: 600px) {
-
   .home-content,
   .about-content,
   .contact-content {
-    margin-top: 60px !important;
+    margin-top: 60px !important; /* Ensure space below fixed header on small screens */
   }
 
   .header-root {
@@ -63,10 +70,13 @@
   .header-select {
     width: 100% !important;
     font-size: 15px !important;
-    margin: 4px 0 0 100px;
+    margin: 4px 0 0 100px; /* Adjust dropdown alignment */
   }
 }
 
+/* ------------------------------ */
+/* 🧩 Header Styles */
+/* ------------------------------ */
 .header-root {
   position: fixed;
   top: 0;
@@ -102,6 +112,15 @@
   cursor: pointer;
   transition: border 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
   height: 44px;
+}
+
+/* ------------------------------ */
+/* 🛒 Product Grid & Cards */
+/* ------------------------------ */
+.product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center cards horizontally */
 }
 
 .product-card {
@@ -142,9 +161,22 @@
   font-size: 16px;
 }
 
+/* ------------------------------ */
+/* ✏️ Form Inputs */
+/* ------------------------------ */
+.field-input {
+  margin: 8px 0 0 8px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  width: calc(100% - 16px);
+}
+
+/* ------------------------------ */
+/* 🎨 Themed Transition Wrapper */
+/* ------------------------------ */
 .theme-transition {
-  min-height: calc(-96px + 100dvh);
+  min-height: calc(-96px + 100dvh); /* Handles height with fixed header compensation */
   padding: 16px;
   margin-top: 0px;
-  transition: background 0.4s, color 0.4s;
+  transition: background 0.4s, color 0.4s; /* Smooth transitions for theme switch */
 }

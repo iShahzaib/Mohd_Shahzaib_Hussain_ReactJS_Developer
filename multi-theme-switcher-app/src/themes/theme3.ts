@@ -1,3 +1,7 @@
+// Theme 3: Colorful Theme with Card-Based Grid Layout
+// This theme embraces vibrant colors, playful fonts, and rounded layouts.
+// Ideal for creative or informal applications looking to stand out visually.
+
 const theme3 = {
   background: "#f0f8ff",
   color: "#333",

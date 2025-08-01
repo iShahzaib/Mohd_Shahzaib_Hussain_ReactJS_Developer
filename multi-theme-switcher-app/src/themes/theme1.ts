@@ -1,3 +1,7 @@
+// Theme 1: Minimalist Light Theme
+// This theme uses a clean white background, soft card shadows, and sans-serif fonts
+// for a clean and modern UI. Ideal for users who prefer simplicity and clarity.
+
 const theme1 = {
   background: "#ffffff",
   color: "#222222",

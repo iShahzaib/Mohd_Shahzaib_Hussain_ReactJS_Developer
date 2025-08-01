@@ -1,14 +1,16 @@
-// src/pages/Home.tsx
 import { useEffect, useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import ProductCard from "../components/ProductCard";
 
+// Define the structure of a Product item
 interface Product {
   id: number;
   title: string;
   price: number;
   image: string;
   description: string;
+
+  // Uncomment for future use if needed
   // category: string;
   // rating: {
   //   rate: number;
@@ -16,17 +18,22 @@ interface Product {
   // };
 }
 
+// Home page component — shows list of products and supports theme switching
 export default function Home() {
+  // Get current theme styles from context
   const { theme } = useTheme();
+
+  // Local state to store products and loading indicator
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(true);
 
+  // Fetch product data from Fake Store API when component mounts
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data);
-        setLoading(false);
+        setProducts(data); // Store fetched products
+        setLoading(false); // Hide loader
       })
       .catch((error) => {
         console.error("Error fetching products:", error);
@@ -38,27 +45,26 @@ export default function Home() {
     <div
       className="theme-transition"
       style={{
-        background: theme.background,
-        color: theme.color,
-        fontFamily: theme.fontFamily,
+        background: theme.background, // Apply background from selected theme
+        color: theme.color, // Apply text color from theme
+        fontFamily: theme.fontFamily, // Apply font from theme
       }}
     >
       <div className="home-content">
-        <h2>Product List</h2>
-        <p style={{ marginBottom: 16 }}>
+        {/* Page Heading */}
+        <h2 style={{ textAlign: "center" }}>Product List</h2>
+
+        {/* Intro paragraph */}
+        <p style={{ marginBottom: 16, textAlign: "center" }}>
           Browse our latest products and enjoy seamless theme switching!
         </p>
+
+        {/* Show loading text until data is fetched */}
         {loading ? (
-          <p>Loading...</p>
+          <p style={{ textAlign: "center" }}>Loading...</p>
         ) : (
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: theme.spacing,
-              justifyContent: "center",
-            }}
-          >
+          <div className="product-grid" style={{ gap: theme.spacing }}>
+            {/* Render product cards */}
             {products.map((product) => (
               <ProductCard
                 key={product.id}

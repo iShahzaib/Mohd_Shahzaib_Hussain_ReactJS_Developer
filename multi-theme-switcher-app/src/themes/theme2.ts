@@ -1,3 +1,7 @@
+// Theme 2: Dark Mode with Sidebar Layout
+// Designed for users who prefer dark UIs with bold, readable fonts.
+// It features a sidebar layout, stronger shadows, and high-contrast colors.
+
 const theme2 = {
   background: "#121212",
   color: "#ffffff",
