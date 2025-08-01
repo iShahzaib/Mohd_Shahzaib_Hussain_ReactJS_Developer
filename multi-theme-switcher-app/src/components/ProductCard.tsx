@@ -17,7 +17,7 @@ interface ProductCardProps {
 }
 
 // ProductCard component displays a single product with theme-based styling
-const ProductCard: React.FC<ProductCardProps> = ({
+const ProductCard: React.FC<ProductCardProps> = React.memo(({
   title,
   price,
   image,
@@ -105,6 +105,6 @@ const ProductCard: React.FC<ProductCardProps> = ({
       </button>
     </div>
   );
-};
+});
 
 export default ProductCard;
