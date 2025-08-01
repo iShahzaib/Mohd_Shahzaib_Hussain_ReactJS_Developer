@@ -1,6 +1,7 @@
+import { Link } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 
-// Header component provides the top navigation bar with a theme switcher dropdown
+// Header component provides the top navigation bar with theme switcher dropdown and page links
 export default function Header() {
   // Access theme values and the current selected theme name from context
   const { themeName, setThemeName, theme } = useTheme();
@@ -17,7 +18,7 @@ export default function Header() {
         boxShadow: theme.boxShadow || "0 2px 8px rgba(0,0,0,0.05)",
       }}
     >
-      {/* Left section: App icon and title */}
+      {/* Left: Logo & App title */}
       <div style={{ display: "flex", alignItems: "center" }}>
         {/* Emoji icon for branding (placeholder) */}
         <span className="header-icon" role="img" aria-label="Theme Icon">
@@ -26,7 +27,14 @@ export default function Header() {
         <span className="header-title">Multi-Theme Switcher App</span>
       </div>
 
-      {/* Right section: Theme switcher dropdown */}
+      {/* Center: Navigation Links */}
+      <nav className="header-nav">
+        <Link to="/" style={{ color: theme.headerColor }}>Home</Link>
+        <Link to="/about" style={{ color: theme.headerColor }}>About</Link>
+        <Link to="/contact" style={{ color: theme.headerColor }}>Contact</Link>
+      </nav>
+
+      {/* Right: Theme Switcher Dropdown */}
       <select
         className="header-select"
         value={themeName}
