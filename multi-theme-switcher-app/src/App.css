@@ -190,6 +190,13 @@
   width: calc(100% - 16px);
 }
 
+.form-submit-button {
+  border: none;
+  padding: 10px 24px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
 /* ------------------------------ */
 /* 🎨 Themed Transition Wrapper */
 /* ------------------------------ */

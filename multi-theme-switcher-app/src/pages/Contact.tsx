@@ -65,16 +65,14 @@ export default function Contact() {
 
           {/* Submit button */}
           <button
+            className="form-submit-button"
+            id="submit"
             type="submit"
             style={{
               background: theme.buttonBg,
               color: theme.buttonColor,
-              border: "none",
               borderRadius: theme.borderRadius,
-              padding: "10px 24px",
               fontFamily: theme.fontFamily,
-              cursor: "pointer",
-              transition: "background 0.3s",
             }}
           >
             Send
