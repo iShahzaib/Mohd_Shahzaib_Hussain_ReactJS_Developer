@@ -50,7 +50,7 @@
   .home-content,
   .about-content,
   .contact-content {
-    margin-top: 60px !important; /* Ensure space below fixed header on small screens */
+    margin-top: 6rem !important; /* Ensure space below fixed header on small screens */
   }
 
   .header-root {
@@ -126,7 +126,8 @@
   outline: none;
   cursor: pointer;
   transition: border 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
-  height: 44px;
+  height: 48px;
+  line-height: 1.5;
   appearance: none;            /* Standard */
   -webkit-appearance: none;    /* Safari & iOS */
   -moz-appearance: none;       /* Firefox */
