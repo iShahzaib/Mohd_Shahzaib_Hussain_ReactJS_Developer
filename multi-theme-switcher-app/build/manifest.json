@@ -1,6 +1,9 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Multi-Theme Switcher App",
+  "short_name": "Theme Switcher App",
+  "description": "A React app demonstrating multiple themes with a theme switcher.",
+  "version": "1.0.0",
+  "orientation": "portrait",
   "icons": [
     {
       "src": "favicon.ico",
