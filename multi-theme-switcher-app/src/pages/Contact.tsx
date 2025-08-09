@@ -1,9 +1,13 @@
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
+import { useSelector } from "react-redux";
+import themes from "../themes"; // { theme1, theme2, theme3 }
 
 // Contact page component — shows contact info and a simple themed form
 export default function Contact() {
   // Access the current theme from context
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
+  const themeName = useSelector((state: any) => state.theme.themeName);
+  const theme = themes[themeName];
 
   return (
     <div

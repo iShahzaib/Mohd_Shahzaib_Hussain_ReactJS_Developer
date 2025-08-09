@@ -1,9 +1,13 @@
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
+import { useSelector } from "react-redux";
+import themes from "../themes"; // { theme1, theme2, theme3 }
 
 // About page component — introduces the app's purpose and functionality
 export default function About() {
   // Get the current theme from the ThemeContext
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
+  const themeName = useSelector((state: any) => state.theme.themeName);
+  const theme = themes[themeName];
 
   return (
     <div

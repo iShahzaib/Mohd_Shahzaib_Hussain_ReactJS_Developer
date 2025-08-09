@@ -1,5 +1,7 @@
 import React from "react";
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
+import { useSelector } from "react-redux";
+import themes from "../themes"; // { theme1, theme2, theme3 }
 
 // Define the props expected by the ProductCard component
 interface ProductCardProps {
@@ -26,7 +28,9 @@ const ProductCard: React.FC<ProductCardProps> = React.memo(({
   // rating,
 }) => {
   // Access the current theme from ThemeContext
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
+  const themeName = useSelector((state: any) => state.theme.themeName);
+  const theme = themes[themeName];
 
   return (
     <div

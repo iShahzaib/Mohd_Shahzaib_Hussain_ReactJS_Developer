@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
+import { useSelector } from "react-redux";
+import themes from "../themes"; // { theme1, theme2, theme3 }
 import ProductCard from "../components/ProductCard";
 
 // Define the structure of a Product item
@@ -21,7 +23,9 @@ interface Product {
 // Home page component — shows list of products and supports theme switching
 export default function Home() {
   // Get current theme styles from context
-  const { theme } = useTheme();
+  // const { theme } = useTheme();
+  const themeName = useSelector((state: any) => state.theme.themeName);
+  const theme = themes[themeName];
 
   // Local state to store products and loading indicator
   const [products, setProducts] = useState<Product[]>([]);

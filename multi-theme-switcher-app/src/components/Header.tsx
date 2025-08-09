@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
-import { useTheme } from "../context/ThemeContext";
+// import { useTheme } from "../context/ThemeContext";
+import { useSelector, useDispatch } from "react-redux";
+import { setThemeName } from "../redux/themeSlice";
+import themes from "../themes"; // { theme1, theme2, theme3 }
 
 // Header component provides the top navigation bar with theme switcher dropdown and page links
 export default function Header() {
   // Access theme values and the current selected theme name from context
-  const { themeName, setThemeName, theme } = useTheme();
+  // const { themeName, setThemeName, theme } = useTheme();
+  const themeName = useSelector((state: any) => state.theme.themeName);
+  const theme = themes[themeName];
+  const dispatch = useDispatch();
 
   return (
     <header
@@ -39,7 +45,8 @@ export default function Header() {
         className="header-select"
         value={themeName}
         // Update the selected theme using context setter
-        onChange={(e) => setThemeName(e.target.value as any)}
+        // onChange={(e) => setThemeName(e.target.value as any)}
+        onChange={(e) => dispatch(setThemeName(e.target.value as any))}
         aria-label="Switch Theme"
         style={{
           borderRadius: theme.borderRadius,
